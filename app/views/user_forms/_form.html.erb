@@ -1,4 +1,4 @@
-<%= form_with(model: user_form, local: true) do |form| %>
+<%= form_with(model: user_form, local: true) do |f| %>
   <% if user_form.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user_form.errors.count, "error") %> prohibited this user_form from being saved:</h2>
@@ -11,17 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_area :image, id: :user_form_image %>
+  <div>
+    <%= f.fields_for :vaccs do |v| %>
+      <%= render 'vaccs_fields', f: v %>
+    <% end %>
+
+    <div>
+      <%= link_to_add_association 'Add Vaccination', f, :vaccs, class: 'btn' %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :user_form_user_id %>
+    <%= f.label :image %>
+    <%= f.text_area :image, id: :user_form_image %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>
+
+
+
