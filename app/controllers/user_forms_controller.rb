@@ -15,7 +15,10 @@ class UserFormsController < ApplicationController
   # GET /user_forms/new
   def new
     @user_form = UserForm.new
-    1.times {@user_form.vaccs.build}
+    @vaccinations = Vaccination.all 
+    @vaccinations.each do |v|
+      @user_form.vaccs.build
+    end
   end
 
   # GET /user_forms/1/edit

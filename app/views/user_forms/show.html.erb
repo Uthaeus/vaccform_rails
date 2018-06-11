@@ -10,5 +10,13 @@
   <%= @user_form.user.first_name %>
 </p>
 
+<div>
+  <% @user_form.vaccs.each do |v| %>
+    <p><%= v.name %></p>
+    <p><%= v.rec %></p>
+    <p><%= v.exp %></p>
+  <% end %>
+</div>
+
 <%= link_to 'Edit', edit_user_form_path(@user_form) %> |
 <%= link_to 'Back', user_forms_path %>
