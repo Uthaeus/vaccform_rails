@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_forms
   devise_for :users
   resources :vaccinations
   root to: 'pages#home'

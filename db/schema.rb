@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180611145328) do
+ActiveRecord::Schema.define(version: 20180611145918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "user_forms", force: :cascade do |t|
+    t.text "image"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_forms_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,4 +47,13 @@ ActiveRecord::Schema.define(version: 20180611145328) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "vaccs", force: :cascade do |t|
+    t.string "name"
+    t.date "rec"
+    t.date "exp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "user_forms", "users"
 end
