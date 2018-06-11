@@ -15,7 +15,7 @@
     <% @user_forms.each do |user_form| %>
       <tr>
         <td><%= user_form.image %></td>
-        <td><%= user_form.user %></td>
+        <td><%= user_form.user.first_name %></td>
         <td><%= link_to 'Show', user_form %></td>
         <td><%= link_to 'Edit', edit_user_form_path(user_form) %></td>
         <td><%= link_to 'Destroy', user_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
