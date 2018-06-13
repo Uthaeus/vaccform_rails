@@ -4,5 +4,5 @@ class UserForm < ApplicationRecord
 
   accepts_nested_attributes_for :vaccs, 
                                 allow_destroy: true,
-                                reject_if: lambda { |attrs| attrs['rec'].blank? }
+                                reject_if: lambda { |attrs| attrs['name'].blank? }
 end

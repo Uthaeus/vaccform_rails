@@ -14,10 +14,11 @@
   <div>
     <%= f.fields_for :vaccs do |v| %>
       <%= render 'vaccs_fields', f: v %>
+      <%= render 'blank_vacc_fields', f: v %>
     <% end %>
 
     <div>
-      <%= link_to_add_association 'Add Vaccination', f, :vaccs, partial: 'vaccs_fields' %>
+      <%= link_to_add_association 'Add Vaccination', f, :vaccs, partial: 'blank_vacc_fields' %>
     </div>
   </div>
 
