@@ -21,9 +21,14 @@
     </div>
   </div>
 
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.text_area :image, id: :user_form_image %>
+  <div>
+    <%= f.fields_for :form_images do |fi| %>
+      <%= render 'image_fields', f: fi %>
+    <% end %>
+
+    <div>
+      <%= link_to_add_association 'Add Image', f, :form_images, partial: 'image_fields' %>
+    </div>
   </div>
 
   <div class="actions">

@@ -74,6 +74,6 @@ class UserFormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_form_params
-      params.require(:user_form).permit(:image, :user_id, vaccs_attributes: [:id, :name, :rec, :exp, :_destroy])
+      params.require(:user_form).permit(:image, :user_id, vaccs_attributes: [:id, :name, :rec, :exp, :_destroy], form_images_attributes: [:id, :main_image, :_destroy])
     end
 end
