@@ -54,6 +54,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'bootstrap-datepicker-rails', '~> 1.8', '>= 1.8.0.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.11'
 gem 'devise', '~> 4.4', '>= 4.4.3'
+gem 'petergate', '~> 1.8', '>= 1.8.1'
 
 
 
