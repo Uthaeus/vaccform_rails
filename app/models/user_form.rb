@@ -1,7 +1,7 @@
 class UserForm < ApplicationRecord
   belongs_to :user
-  has_many :vaccs, dependent: :delete_all
-  has_many :form_images, dependent: :delete_all
+  has_many :vaccs
+  has_many :form_images
 
   accepts_nested_attributes_for :vaccs, 
                                 allow_destroy: true,
