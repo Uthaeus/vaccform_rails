@@ -1,7 +1,7 @@
 class UserForm < ApplicationRecord
   belongs_to :user
-  has_many :vaccs
-  has_many :form_images
+  has_many :vaccs, dependent: :delete_all
+  has_many :form_images, dependent: :delete_all
 
   accepts_nested_attributes_for :vaccs, 
                                 allow_destroy: true,
@@ -10,4 +10,7 @@ class UserForm < ApplicationRecord
   accepts_nested_attributes_for :form_images,
                                 allow_destroy: true,
                                 reject_if: lambda { |attrs| attrs['main_image'].blank? }
+
+
+  
 end

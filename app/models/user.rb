@@ -14,7 +14,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_presence_of :name
-  has_many :user_forms
+  has_many :user_forms, dependent: :delete_all
 
   def first_name
     self.name.split.first 

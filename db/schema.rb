@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180613171420) do
+ActiveRecord::Schema.define(version: 20180613233321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20180613171420) do
     t.index ["user_form_id"], name: "index_vaccs_on_user_form_id"
   end
 
-  add_foreign_key "form_images", "user_forms"
-  add_foreign_key "user_forms", "users"
-  add_foreign_key "vaccs", "user_forms"
+  add_foreign_key "form_images", "user_forms", on_delete: :cascade
+  add_foreign_key "user_forms", "users", on_delete: :cascade
+  add_foreign_key "vaccs", "user_forms", on_delete: :cascade
 end

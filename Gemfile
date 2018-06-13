@@ -55,6 +55,10 @@ gem 'bootstrap-datepicker-rails', '~> 1.8', '>= 1.8.0.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.11'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'petergate', '~> 1.8', '>= 1.8.1'
+gem 'carrierwave', '~> 1.2', '>= 1.2.2'
+gem 'mini_magick', '~> 4.8'
+gem 'carrierwave-aws', '~> 1.3'
+gem 'dotenv-rails', '~> 2.4'
 
 
 
