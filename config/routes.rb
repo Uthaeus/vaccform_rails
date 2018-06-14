@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :vaccinations
   root to: 'pages#home'
 
+  get 'pages/user_list'
+
 end
