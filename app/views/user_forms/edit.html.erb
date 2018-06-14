@@ -2,5 +2,6 @@
 
 <%= render 'form', user_form: @user_form %>
 
-<%= link_to 'Show', @user_form %> |
-<%= link_to 'Back', user_forms_path %>
+<%= link_to 'Show', @user_form, class: 'btn' %> |
+<%= link_to 'Back', user_forms_path, class: 'btn' %> |
+<%= link_to 'Delete', @user_form, method: :delete, data: { confirm: 'Are your sure?' }, class: 'btn' %>

@@ -1,8 +1,16 @@
 <div class="form-group nested-fields">
-  <%= f.label :vaccination %>
-  <%= f.collection_select(:name, Vaccination.all, :title, :title, { :prompt => 'Select an option'}, { :multiple => false }) %>
-  <%= f.label :received %>
-  <%= f.date_field :rec %>
-  <%= f.label :expires %>
-  <%= f.date_field :exp %>
+  <div class="form-row">
+    <div class='col-md-4 mb-3'>
+      <%= f.label :vaccination %>
+      <%= f.collection_select(:name, Vaccination.all, :title, :title, { :prompt => 'Select an option'}, { :multiple => false, class: 'form-control' }) %>
+    </div>
+    <div class='col-md-4 mb-3'>
+      <%= f.label :received %>
+      <%= f.date_field :rec, class: 'form-control' %>
+    </div>
+    <div class='col-md-4 mb-3'>
+      <%= f.label :expires %>
+      <%= f.date_field :exp, class: 'form-control' %>
+    </div>
+  </div>
 </div>

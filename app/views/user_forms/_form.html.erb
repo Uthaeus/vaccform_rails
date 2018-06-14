@@ -1,40 +1,44 @@
-<%= form_with(model: user_form, local: true) do |f| %>
-  <% if user_form.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user_form.errors.count, "error") %> prohibited this user_form from being saved:</h2>
+<div class='row'>
+  <div class="col-md-8">
+    <%= form_with(model: user_form, local: true) do |f| %>
+      <% if user_form.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(user_form.errors.count, "error") %> prohibited this user_form from being saved:</h2>
 
-      <ul>
-      <% user_form.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% user_form.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div>
-    <%= f.fields_for :vaccs do |v| %>
-      <%= render 'vaccs_fields', f: v %>
+      <div>
+        <%= f.fields_for :vaccs do |v| %>
+          <%= render 'vaccs_fields', f: v %>
+        <% end %>
+
+        <div>
+          <%= link_to_add_association 'Add Vaccination', f, :vaccs, partial: 'blank_vacc_fields', class: 'btn btn-outline-info' %>
+        </div>
+      </div>
+
+      <div>
+        <%= f.fields_for :form_images do |fi| %>
+          <%= render 'image_fields', f: fi %>
+        <% end %>
+
+        <div>
+          <%= link_to_add_association 'Add Image', f, :form_images, partial: 'image_fields', class: 'btn btn-outline-dark top-marg' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit 'Create Form', class: 'btn btn-outline-primary btn-block top-marg' %>
+      </div>
     <% end %>
-
-    <div>
-      <%= link_to_add_association 'Add Vaccination', f, :vaccs, partial: 'blank_vacc_fields' %>
-    </div>
   </div>
-
-  <div>
-    <%= f.fields_for :form_images do |fi| %>
-      <%= render 'image_fields', f: fi %>
-    <% end %>
-
-    <div>
-      <%= link_to_add_association 'Add Image', f, :form_images, partial: 'image_fields' %>
-    </div>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
 
 
 
