@@ -19,9 +19,9 @@
           <td><%= user_form.id %></td>
           <td><%= user_form.created_at %></td>
           <td><%= user_form.user.first_name %></td>
-          <td><%= link_to 'Show', user_form, class: 'btn' %></td>
-          <td><%= link_to 'Edit', edit_user_form_path(user_form), class: 'btn' %></td>
-          <td><%= link_to 'Destroy', user_form, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %></td>
+          <td><%= link_to '', user_form, class: 'fas fa-glasses fa-2x' %></td>
+          <td><%= link_to '', edit_user_form_path(user_form), class: "far fa-edit" %></td>
+          <td><%= link_to '', user_form, method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash-alt" %></td>
         </tr>
       <% end %>
     </tbody>
