@@ -1,6 +1,10 @@
-<h1>Editing Vaccination</h1>
+<h1>Edit Vaccination</h1>
 
-<%= render 'form', vaccination: @vaccination %>
+<div class="row">
+  <div class="col-md-8">
+    <%= render 'form', vaccination: @vaccination %>
+  </div>
+</div>
 
-<%= link_to 'Show', @vaccination %> |
-<%= link_to 'Back', vaccinations_path %>
+<%= link_to 'Show', @vaccination, class: 'btn' %> |
+<%= link_to 'Back', vaccinations_path, class: 'btn' %>

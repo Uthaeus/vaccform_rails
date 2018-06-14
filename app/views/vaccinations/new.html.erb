@@ -1,5 +1,9 @@
 <h1>New Vaccination</h1>
 
-<%= render 'form', vaccination: @vaccination %>
+<div class="row">
+  <div class="col-md-8 top-marg-large">
+    <%= render 'form', vaccination: @vaccination %>
+  </div>
+</div>
 
-<%= link_to 'Back', vaccinations_path %>
+<%= link_to 'Back', vaccinations_path, class: 'btn' %>
