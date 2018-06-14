@@ -1,7 +1,11 @@
-<h1>Editing Form</h1>
+<h1>Edit Form</h1>
 
-<%= render 'form', user_form: @user_form %>
+<div class="top-marg">
+  <%= render 'form', user_form: @user_form %>
+</div>
 
-<%= link_to 'Show', @user_form, class: 'btn' %> |
-<%= link_to 'Back', user_forms_path, class: 'btn' %> |
-<%= link_to 'Delete', @user_form, method: :delete, data: { confirm: 'Are your sure?' }, class: 'btn' %>
+<div class="top-marg">
+  <%= link_to 'Show', @user_form, class: 'btn' %> |
+  <%= link_to 'Back', user_forms_path, class: 'btn' %> |
+  <%= link_to 'Delete', @user_form, method: :delete, data: { confirm: 'Are your sure?' }, class: 'btn' %>
+</div>

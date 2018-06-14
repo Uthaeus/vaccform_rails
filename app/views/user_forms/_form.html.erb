@@ -33,13 +33,41 @@
           <%= link_to_add_association 'Add Image', f, :form_images, partial: 'image_fields', class: 'btn btn-outline-dark top-marg' %>
         </div>
       </div>
-
-      <div class="form-group">
-        <%= f.submit 'Create Form', class: 'btn btn-outline-primary btn-block top-marg' %>
+      <div class="top-marg-large">
+        <div class="form-group">
+          <%= f.submit 'Create Form', class: 'btn btn-outline-primary btn-block top-marg' %>
+        </div>
       </div>
     <% end %>
   </div>
+  <div class="col-md-4">
+    <div class='card form-card'>
+      <h4 class="top-marg">Notes:</h4>
+      <div class="notes-list">
+        <p>The following are included in the dropdown selection menu</p>
+        <ul>
+          <li>Tdap</li>
+          <li>Tuberculosis</li>
+          <li>Hep A</li>
+          <li>Hep B</li>
+          <li>Varicella</li>
+          <li>Rubella</li>
+          <li>Mumps</li>
+          <li>Anti-hbs</li>
+          <li>Rubeola</li>
+        </ul>
+        <p>If the selection menu does not include a needed option, open a blank item using the <u><i>Add Blank Field</i></u> button</p>
+
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
 
 
 
