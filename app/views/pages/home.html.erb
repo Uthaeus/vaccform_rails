@@ -1,2 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="row">
+  <div class="col-md-8">
+    <% if !current_user.is_a? GuestUser %>
+      <%= render 'user_home' %>
+    <% else %>
+      <%= render 'unregistered' %>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <%= image_tag "machine_image.jpeg", width: '100%' %>
+  </div>
+</div>

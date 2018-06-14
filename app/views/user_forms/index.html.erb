@@ -1,11 +1,12 @@
-<p id="notice"><%= notice %></p>
 
-<h1>User Forms</h1>
 
-<table>
+<h1 class="top-marg">Forms</h1>
+
+<table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>Image</th>
+      <th>#</th>
+      <th>Created</th>
       <th>User</th>
       <th colspan="3"></th>
     </tr>
@@ -14,11 +15,12 @@
   <tbody>
     <% @user_forms.each do |user_form| %>
       <tr>
-        <td><%= user_form.image %></td>
+        <td><%= user_form.id %></td>
+        <td><%= user_form.created_at %></td>
         <td><%= user_form.user.first_name %></td>
-        <td><%= link_to 'Show', user_form %></td>
-        <td><%= link_to 'Edit', edit_user_form_path(user_form) %></td>
-        <td><%= link_to 'Destroy', user_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user_form, class: 'btn' %></td>
+        <td><%= link_to 'Edit', edit_user_form_path(user_form), class: 'btn' %></td>
+        <td><%= link_to 'Destroy', user_form, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New User Form', new_user_form_path %>
+<%= link_to 'New User Form', new_user_form_path, class: 'btn btn-light' if current_user.role == :admin %>
