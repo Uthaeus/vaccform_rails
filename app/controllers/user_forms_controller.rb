@@ -19,10 +19,7 @@ class UserFormsController < ApplicationController
   # GET /user_forms/new
   def new
     @user_form = UserForm.new
-    @vaccinations = Vaccination.all 
-    @vaccinations.each do |v|
-      @user_form.vaccs.build
-    end
+    1.times { @user_form.vaccs.build }
   end
 
   # GET /user_forms/1/edit
