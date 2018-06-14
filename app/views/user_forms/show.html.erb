@@ -1,28 +1,35 @@
-<h2 class="top-marg">Form For <%= @user_form.user.name %></h2>
+<h2 class="top-marg"><%= @user_form.user.name %>:</h2>
 
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Vaccination</th>
-      <th>Date Received</th>
-      <th>Expiration</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @user_form.vaccs.each do |v| %>
+<div class="top-marg">
+  <table class="table table-striped table-hover">
+    <thead>
       <tr>
-        <td><%= v.name %></td>
-        <td><%= v.rec %></td>
-        <td><%= v.exp %></td>
+        <th>Vaccination</th>
+        <th>Date Received</th>
+        <th>Expiration</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @user_form.vaccs.each do |v| %>
+        <tr>
+          <td><%= v.name %></td>
+          <td><%= v.rec %></td>
+          <td><%= v.exp %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<div>
-  <% @user_form.form_images.each do |fi| %>
-    <%= image_tag fi.main_image %>
-  <% end %>
+<div class="top-marg-large">
+  <h4>Images:</h4>
+  <div class="text-center">
+    <% @user_form.form_images.each do |fi| %>
+      <div class="top-marg">
+        <%= image_tag fi.main_image %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <div class="top-marg">
