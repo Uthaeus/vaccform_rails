@@ -19,7 +19,8 @@
         <% end %>
 
         <div>
-          <%= link_to_add_association 'Add Vaccination', f, :vaccs, partial: 'blank_vacc_fields', class: 'btn btn-outline-info' %>
+          <%= link_to_add_association 'Add From Selection', f, :vaccs, partial: 'vaccs_fields', class: 'btn btn-outline-info' %>
+          <%= link_to_add_association 'Add Blank Field', f, :vaccs, partial: 'blank_vacc_fields', class: 'btn btn-outline-info' %>
         </div>
       </div>
 
