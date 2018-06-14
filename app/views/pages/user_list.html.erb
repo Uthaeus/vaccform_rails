@@ -1,1 +1,17 @@
-<h1>User List</h1>
+<div class="top-marg-large"> 
+  <h1>Users</h1>
+  <hr />
+</div>
+<div class="row">
+  <div class="col-md-8">
+    <div class="card top-marg-large">
+      <% @users.each do |user| %>
+        <div class='form-card'>
+          <h3 class="top-marg"><%= user.name %></h3>
+          <p><small>Created <%= distance_of_time_in_words(user.created_at, Time.now) %> ago</small></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
