@@ -34,7 +34,7 @@ class UserFormsController < ApplicationController
 
     respond_to do |format|
       if @user_form.save
-        format.html { redirect_to @user_form, notice: 'User form was successfully created.' }
+        format.html { redirect_to @user_form, notice: 'Form was successfully created.' }
         format.json { render :show, status: :created, location: @user_form }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class UserFormsController < ApplicationController
   def update
     respond_to do |format|
       if @user_form.update(user_form_params)
-        format.html { redirect_to @user_form, notice: 'User form was successfully updated.' }
+        format.html { redirect_to @user_form, notice: 'Form was successfully updated.' }
         format.json { render :show, status: :ok, location: @user_form }
       else
         format.html { render :edit }
@@ -62,7 +62,7 @@ class UserFormsController < ApplicationController
   def destroy
     @user_form.destroy
     respond_to do |format|
-      format.html { redirect_to user_forms_url, notice: 'User form was successfully destroyed.' }
+      format.html { redirect_to user_forms_url, notice: 'Form was successfully removed.' }
       format.json { head :no_content }
     end
   end
