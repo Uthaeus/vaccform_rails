@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @vaccination.title %>
-</p>
+<div class="text-center top-marg-large">
+  <h2><%= @vaccination.title %></h2>
+</div>
 
-<%= link_to 'Edit', edit_vaccination_path(@vaccination) %> |
-<%= link_to 'Back', vaccinations_path %>
+<div class="top-marg-large">
+  <%= link_to 'Edit', edit_vaccination_path(@vaccination), class: 'btn btn-light' %> |
+  <%= link_to 'Back', vaccinations_path, class: 'btn btn-light' %>
+</div>
