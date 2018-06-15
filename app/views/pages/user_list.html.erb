@@ -7,8 +7,15 @@
     <div class="card top-marg-large">
       <% @users.each do |user| %>
         <div class='form-card'>
-          <h3 class="top-marg"><%= user.name %></h3>
-          <p><small>Created <%= distance_of_time_in_words(user.created_at, Time.now) %> ago</small></p>
+          <div class="row">
+            <div class="col-md-8">
+              <h3 class="top-marg"><%= user.name %></h3>
+              <p><small>Created <%= distance_of_time_in_words(user.created_at, Time.now) %> ago</small></p>
+            </div>
+            <div class="col-md-4">
+              <%= link_to 'Delete User', root_path, class: 'btn btn-outline-danger' %>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>

@@ -1,4 +1,7 @@
 <div class="form-group nested-fields">
   <%= f.label :image %>
   <%= f.file_field :main_image, id: :user_form_image, class: 'form-control' %>
+  <div class="top-marg">
+    <%= link_to_remove_association 'Remove Image', f, class: 'btn btn-outline-danger btn-sm' %>
+  </div>
 </div>
