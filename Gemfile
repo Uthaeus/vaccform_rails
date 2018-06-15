@@ -62,7 +62,7 @@ gem 'dotenv-rails', '~> 2.4'
 gem 'gritter', '~> 1.2'
 
 
-
+ruby '2.4.1'
 
 
 
